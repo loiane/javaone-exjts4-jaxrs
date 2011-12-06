@@ -2,17 +2,19 @@ Ext.define('BrazilJS.store.Contacts', {
     extend: 'Ext.data.Store',
     model: 'BrazilJS.model.Contact',
     autoLoad: true,
-    pageSize: 35,
-    autoLoad: {start: 0, limit: 35},
+    pageSize: 27,
+    autoLoad: {start: 0, limit: 27},
     
     proxy: {
-        type: 'ajax',
+        /*type: 'ajax',
         api: {
-        	read : 'contact/view.action',
+            read : 'contact/view.action',
             create : 'contact/create.action',
             update: 'contact/update.action',
             destroy: 'contact/delete.action'
-        },
+        },*/
+        type: 'rest',
+        url: 'resources/rest',
         reader: {
             type: 'json',
             root: 'data',

@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 /**
@@ -17,7 +18,10 @@ import javax.persistence.NamedQuery;
  * @author loiane
  */
 @Entity
-@NamedQuery(name="test", query="select c from Contact as c")
+@NamedQueries({
+    @NamedQuery(name="test", query="select c from Contact as c"),
+    @NamedQuery(name="getContactCount", query="select count(c) from Contact as c")
+})
 public class Contact implements Serializable {
     
     private static final long serialVersionUID = 1L;
@@ -26,8 +30,14 @@ public class Contact implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(name="NAME", nullable=false)
+    @Column(name="NAME", nullable=false, length=60)
     private String name;
+    
+    @Column(name="PHONE", nullable=false, length=20)
+    private String phone;
+    
+    @Column(name="EMAIL", nullable=false, length=80)
+    private String email;
 
     public Long getId() {
         return id;
@@ -76,6 +86,32 @@ public class Contact implements Serializable {
         this.name = name;
     }
 
-    
+    /**
+     * @return the phone
+     */
+    public String getPhone() {
+        return phone;
+    }
+
+    /**
+     * @param phone the phone to set
+     */
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
     
 }

@@ -25,8 +25,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -42,8 +42,8 @@ public class RESTContactResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public ExtJSContactReturn view(
-        @PathParam("start") int start,
-        @PathParam("limit") int limit
+        @QueryParam("start") int start,
+        @QueryParam("limit") int limit
             ){
         
         List<Contact> contacts = new ArrayList<Contact>();
@@ -62,16 +62,24 @@ public class RESTContactResource {
           
           contacts = query.getResultList();
           
-          extReturn = new ExtJSContactReturn(contacts.size(), contacts, true);
+          extReturn = new ExtJSContactReturn(getTotalContacts(), contacts, true);
             
         }catch(Exception ex){
             System.err.print(ex.getMessage());
             
             extReturn = new ExtJSContactReturn(0, contacts, false);
-            
         } finally{
             return extReturn;
         }
+    }
+    
+    private int getTotalContacts(){
+     
+        Query query = em.createNamedQuery("getContactCount");
+        
+        Number count =(Number) query.getSingleResult();
+        
+        return count.intValue();
     }
     
     @PUT
