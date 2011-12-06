@@ -1,6 +1,6 @@
-Ext.define('BrazilJS.store.Contacts', {
+Ext.define('JavaOne.store.Contacts', {
     extend: 'Ext.data.Store',
-    model: 'BrazilJS.model.Contact',
+    model: 'JavaOne.model.Contact',
     autoLoad: true,
     pageSize: 27,
     autoLoad: {start: 0, limit: 27},
@@ -14,7 +14,7 @@ Ext.define('BrazilJS.store.Contacts', {
             destroy: 'contact/delete.action'
         },*/
         type: 'rest',
-        url: 'resources/rest',
+        url: 'resources/contacts',
         reader: {
             type: 'json',
             root: 'data',

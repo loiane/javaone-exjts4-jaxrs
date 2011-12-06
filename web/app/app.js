@@ -6,7 +6,7 @@
  *	
  * Sample project presented at BrazilJS
  * Brazilian JavaScript Conference
- * Fortaleza - Ceará - 13-14 May 2011
+ * Fortaleza - Cearï¿½ - 13-14 May 2011
  * http://braziljs.com.br/2011
  * 
  * @author Loiane Groner
@@ -14,7 +14,7 @@
  * http://loiane.com (Portuguese)
  */
 Ext.application({
-    name: 'BrazilJS',
+    name: 'JavaOne',
 
     controllers: [
         'Contacts'

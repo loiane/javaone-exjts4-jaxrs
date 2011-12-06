@@ -1,4 +1,4 @@
-Ext.define('BrazilJS.view.contact.List' ,{
+Ext.define('JavaOne.view.contact.List' ,{
     extend: 'Ext.grid.Panel',
     alias : 'widget.contactlist',
     

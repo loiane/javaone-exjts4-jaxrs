@@ -1,4 +1,4 @@
-Ext.define('BrazilJS.controller.Contacts', {
+Ext.define('JavaOne.controller.Contacts', {
     extend: 'Ext.app.Controller',
 
     stores: ['Contacts'],
@@ -34,7 +34,7 @@ Ext.define('BrazilJS.controller.Contacts', {
     },
 
     editUser: function(grid, record) {
-        var edit = Ext.create('BrazilJS.view.contact.Edit').show();
+        var edit = Ext.create('JavaOne.view.contact.Edit').show();
         
         if(record){
         	edit.down('form').loadRecord(record);
@@ -51,7 +51,7 @@ Ext.define('BrazilJS.controller.Contacts', {
 		if (values.id > 0){
 			record.set(values);
 		} else{
-			record = Ext.create('BrazilJS.model.Contact');
+			record = Ext.create('JavaOne.model.Contact');
 			record.set(values);
 			record.setId(0);
 			this.getContactsStore().add(record);

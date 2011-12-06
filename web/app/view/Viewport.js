@@ -1,3 +1,3 @@
-Ext.define('BrazilJS.view.Viewport', {
+Ext.define('JavaOne.view.Viewport', {
     extend: 'Ext.container.Viewport'
 });

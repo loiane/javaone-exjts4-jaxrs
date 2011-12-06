@@ -1,4 +1,4 @@
-Ext.define('BrazilJS.view.contact.Edit', {
+Ext.define('JavaOne.view.contact.Edit', {
     extend: 'Ext.window.Window',
     alias : 'widget.contactedit',
 

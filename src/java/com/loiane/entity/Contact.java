@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -22,6 +23,7 @@ import javax.persistence.NamedQuery;
     @NamedQuery(name="test", query="select c from Contact as c"),
     @NamedQuery(name="getContactCount", query="select count(c) from Contact as c")
 })
+@XmlRootElement
 public class Contact implements Serializable {
     
     private static final long serialVersionUID = 1L;

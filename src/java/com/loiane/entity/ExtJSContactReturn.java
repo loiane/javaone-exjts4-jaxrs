@@ -12,13 +12,13 @@ import java.util.List;
  */
 public class ExtJSContactReturn {
     
-    private int total;
+    private String total;
     
     private List<Contact> data;
     
     private boolean success;
 
-    public ExtJSContactReturn(int total, List<Contact> data, boolean success) {
+    public ExtJSContactReturn(String total, List<Contact> data, boolean success) {
         this.total = total;
         this.data = data;
         this.success = success;
@@ -29,14 +29,14 @@ public class ExtJSContactReturn {
     /**
      * @return the total
      */
-    public int getTotal() {
+    public String getTotal() {
         return total;
     }
 
     /**
      * @param total the total to set
      */
-    public void setTotal(int total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 
