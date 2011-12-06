@@ -18,10 +18,7 @@ Ext.define('BrazilJS.view.contact.List' ,{
 		header: "PHONE #",
 		width: 160,
 		flex:1,
-		dataIndex: 'phone',
-                renderer: function (val){
-                    return '<a href="http://google.com">'+ + val  +'</a>';
-                }
+		dataIndex: 'phone'
 	},{
 		header: "EMAIL",
 		width: 170,

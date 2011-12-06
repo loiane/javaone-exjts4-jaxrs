@@ -48,16 +48,6 @@ Ext.define('BrazilJS.view.contact.Edit', {
                         xtype: 'textfield',
                         name : 'email',
                         fieldLabel: 'Email'
-                    },
-                    {
-                        xtype: 'filefield',
-                        name: 'file',
-                        fieldLabel: 'File',
-                        labelWidth: 50,
-                        msgTarget: 'side',
-                        allowBlank: false,
-                        anchor: '100%',
-                        buttonText: 'Select a File...'
                     }
                 ]
             }

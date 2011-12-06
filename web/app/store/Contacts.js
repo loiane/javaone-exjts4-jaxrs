@@ -6,15 +6,13 @@ Ext.define('BrazilJS.store.Contacts', {
     autoLoad: {start: 0, limit: 35},
     
     proxy: {
-        /*type: 'ajax',
+        type: 'ajax',
         api: {
-            read :   'resources/contact/view.action',
-            create : 'resources/contact/create.action',
-            update:  'resources/contact/update.action',
-            destroy: 'resources/contact/delete.action'
-        },*/
-        type: 'rest',
-        url: 'resources/rest',
+        	read : 'contact/view.action',
+            create : 'contact/create.action',
+            update: 'contact/update.action',
+            destroy: 'contact/delete.action'
+        },
         reader: {
             type: 'json',
             root: 'data',

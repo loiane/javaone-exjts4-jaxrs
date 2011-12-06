@@ -115,7 +115,7 @@ public class RESTContactResource {
     
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Consumes({MediaType.APPLICATION_JSON, MediaType.MULTIPART_FORM_DATA})
     public ExtJSContactReturn create (String json) throws IOException{
         
         ExtJSContactReturn extReturn = null;
